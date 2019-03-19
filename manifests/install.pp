@@ -19,7 +19,7 @@ class consul_template::install {
       ensure_packages(['tar'])
     }
 
-    archive { "/tmp/consul-template-${consul_template::version}":
+    archive { "/tmp/consul-template-${consul_template::version}.zip":
       source       => $consul_template::_download_url,
       extract      => true,
       extract_path => "${consul_template::bin_dir}",
