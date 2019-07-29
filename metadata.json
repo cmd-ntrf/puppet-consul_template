@@ -21,7 +21,7 @@
       "version_requirement": ">= 3.0.0"
     },
     {
-      "name": "solarkennedy/puppet-consul",
+      "name": "KyleAnderson/consul",
       "version_requirement": ">= 5.1.0"
     }
   ],
