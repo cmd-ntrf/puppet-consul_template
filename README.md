@@ -1,8 +1,7 @@
 # puppet-consul_template
 
-[![Build Status](https://travis-ci.org/claranet/puppet-consul_template.svg?branch=master)](https://travis-ci.org/claranet/puppet-consul_template)
-[![Puppet Forge](http://img.shields.io/puppetforge/v/claranet/consul_template.svg)](https://forge.puppetlabs.com/claranet/consul_template)
-[![Forge Downloads](https://img.shields.io/puppetforge/dt/claranet/consul_template.svg)](https://forge.puppetlabs.com/claranet/consul_template)
+Fork of [claranet/puppet-consul_template](https://github.com/claranet/puppet-consul_template)
+that is compatible with Puppet 6.
 
 ## Table of Contents
 
@@ -19,12 +18,6 @@ This module:
 * Optionally installs a user to run it under
 * Installs a configuration file to `/etc/consul-template/config.json`
 * Manages the consul-template service via upstart, sysv, or systemd
-
-## Puppet 3 Support
-
-**Please note that the master branch of this module does not support Puppet 3!**
-
-On 31st December 2016, support for Puppet 3.x was withdrawn. As such, this module no longer supports Puppet 3 - if you require Puppet 3 compatibility, please use the latest version [1.x version from the Puppet Forge](https://forge.puppet.com/Claranet/consul_template), or the [puppet3](https://github.com/claranet/puppet-consul_template/tree/puppet3) branch in Git.
 
 ## Usage
 
