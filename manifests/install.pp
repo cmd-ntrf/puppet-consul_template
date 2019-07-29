@@ -13,28 +13,24 @@ class consul_template::install {
 
   if $consul_template::install_method == 'url' {
 
-    include staging
+    include archive
+
     if $facts['os']['name'] != 'darwin' {
       ensure_packages(['tar'])
     }
-    staging::file { "consul-template_${consul_template::version}.${consul_template::download_extension}":
-      source => $consul_template::_download_url,
-    }
-    -> file { "${staging::path}/consul-template-${consul_template::version}":
-      ensure => directory,
-    }
-    -> staging::extract { "consul-template_${consul_template::version}.${consul_template::download_extension}":
-      target  => "${staging::path}/consul-template-${consul_template::version}",
-      creates => "${staging::path}/consul-template-${consul_template::version}/consul-template",
+
+    archive { "/tmp/consul-template-${consul_template::version}.zip":
+      source       => $consul_template::_download_url,
+      extract      => true,
+      extract_path => "${consul_template::bin_dir}",
+      creates      => "${consul_template::bin_dir}/consul-template",
+      cleanup      => true,
     }
     -> file {
-      "${staging::path}/consul-template-${consul_template::version}/consul-template":
+      "${consul_template::bin_dir}/consul-template":
         owner => 'root',
         group => 0, # 0 instead of root because OS X uses "wheel".
         mode  => '0555';
-      "${consul_template::bin_dir}/consul-template":
-        ensure => link,
-        target => "${staging::path}/consul-template-${consul_template::version}/consul-template";
     }
 
   } elsif $consul_template::install_method == 'package' {
