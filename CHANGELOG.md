@@ -4,6 +4,10 @@ Release notes for the claranet/puppet-varnish module.
 
 ------------------------------------------
 
+## 2.2.0 - 2019-07-29
+  * Reinstate dependency on KyleAnderson/consul to fix issue with `sorted_generate` function
+  * Merge branch 'feature/archive' of surcouf to replace staging by archive
+
 ## 2.1.1 - 2018-08-30
 
 ### PDK Support
