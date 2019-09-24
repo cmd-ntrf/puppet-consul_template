@@ -78,7 +78,7 @@ class consul_template (
   Boolean $service_enable                    = true,
   Enum['stopped', 'running'] $service_ensure = 'running',
   String $user                               = 'root',
-  String $version                            = '0.19.4',
+  String $version                            = '0.22.0',
   Hash $watches                              = {},
 ) inherits consul_template::params {
 

@@ -90,7 +90,7 @@ consul_template::watch { 'common':
 | `config_mode`          | `0660`                  | Mode set on config files and directories. |
 | `bin_dir`              | `/usr/local/bin`        | Path to the consul-template binaries |
 | `arch`                 | Read from facter        | System architecture to use (amd64, x86_64, i386) |
-| `version`              | `0.19.4`                | Version of consul-template to install via download |
+| `version`              | `0.22.0`                | Version of consul-template to install via download |
 | `install_method`       | `url`                   | When set to 'url', consul-template is downloaded and installed from source. If set to 'package', its installed using the system package manager. |
 | `os`                   | Read from facter        |
 | `download_url`         | `undef`                 | URL to download consul-template from (when `install_method` is set to 'url') |
