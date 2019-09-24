@@ -33,18 +33,19 @@ consul-template options can be passed via hiera:
 
 ```yaml
 consul_template::config_defaults:
+  consul:
+    retry:
+      attemtps: 12
+      backoff: 250ms
+    token: <consul token>
+  reload_signal: SIGHUP
+  kill_signal: SIGINT
   deduplicate:
     enabled: true
   log_level: info
   max_stale: 10m
-  retry:
-    attemtps: 12
-    backoff: 250ms
-  kill_signal: SIGINT
-  reload_signal: SIGHUP
-  retry: 10s
-  syslog: true
-  token: <consul token>
+  syslog:
+    enabled: true
 ```
 
 Or via class parameters:
